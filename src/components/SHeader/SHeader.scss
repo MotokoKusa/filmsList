@@ -1,0 +1,14 @@
+.header {
+  padding: 3.6rem 0 1.6rem 0;
+  background-color: var(--color-red);
+  box-shadow: 0 .8rem .7rem  rgba(0, 0, 0, 0.28);
+  &__title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    letter-spacing: 0.21em;
+    text-transform: uppercase;
+    color: var(--color-black);
+  }
+}

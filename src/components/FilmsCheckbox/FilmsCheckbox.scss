@@ -1,0 +1,59 @@
+.checkbox {
+  margin-bottom: 0.2em;
+}
+
+.custom-checkbox>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox>span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+
+}
+
+.custom-checkbox>span::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 0.5em;
+  border: .1rem solid var(--color-gray);
+  background: no-repeat, center center / 100%, transparent;
+}
+
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: var(--color-red-light);
+}
+
+.custom-checkbox>input:not(:disabled):active+span::before {
+  background-color: var(--color-red-light);
+  border-color: var(--color-red-light);
+}
+
+.custom-checkbox>input:focus+span::before {
+  opacity: 0.8;
+}
+
+.custom-checkbox>input:focus:not(:checked)+span::before {
+  opacity: 0.8;
+}
+
+.custom-checkbox>input:checked+span::before {
+  border-color: var(--color-red-light);
+  background-color: var(--color-red-light);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  background-size: 1.1rem;
+}
+
+.custom-checkbox>input:disabled+span::before {
+  background-color: transparent;
+}
