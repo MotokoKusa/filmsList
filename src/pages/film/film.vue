@@ -8,7 +8,7 @@
           </router-link>
         </div>
         <LoaderPic v-if="filmListLoading" />
-        <div v-else-if="filmListLoadingFailed">
+        <div class="txt--xm" v-else-if="!filmCard">
           К сожалению, по вашему запросу ничего не найдено...
         </div>
         <FilmsCard
@@ -24,6 +24,7 @@
           :actors="filmCard.actors"
           :description="filmCard.description"
           :film-item="filmCard"
+          :duration="filmCard.collapse.duration"
         />
       </div>
     </div>
@@ -45,7 +46,7 @@ export default {
   data() {
     return {
       filmCard: null,
-      filmListLoading: true,
+      filmListLoading: false,
       filmListLoadingFailed: false,
     };
   },
@@ -59,6 +60,7 @@ export default {
         axios
           .get(API_BASE_URL + "/api/movie/" + id)
           .then((response) => {
+            console.log(response);
             if (response.data.data) {
               this.filmCard = response.data.data;
               this.filmCard.imgSrc = `http://www.kinopoisk.ru/images/film_big${this.filmCard.poster.substring(
@@ -72,12 +74,13 @@ export default {
     },
   },
   watch: {
-    "$route.params.id": {
-      handler() {
-        this.loadFilm(this.$route.params.id, this.$route.params.film);
-      },
-      immediate: true,
+    "$route.params.id"(val) {
+      this.filmCard = null;
+      this.loadFilm(val, this.$route.params.film);
     },
+  },
+  created() {
+    this.loadFilm(this.$route.params.id, this.$route.params.film);
   },
 };
 </script>

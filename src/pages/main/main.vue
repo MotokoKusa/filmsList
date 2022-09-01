@@ -3,7 +3,7 @@
     <div class="container">
       <div class="main__box">
         <div class="main__wrap">
-          <h2 class="main__wrap-title">Фильмы</h2>
+          <h2 class="main__wrap-title txt--xm">Фильмы</h2>
           <div class="main__wrap__filters">
             <FilmsCheckbox
               :is-disabled="isFilterDate"
@@ -35,6 +35,7 @@
           :actors="el.actors"
           :description="el.description"
           :film-item="el"
+          :duration="el.collapse.duration"
         />
       </div>
     </div>

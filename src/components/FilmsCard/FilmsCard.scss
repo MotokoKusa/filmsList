@@ -23,26 +23,6 @@
       height: 16.8rem;
     }
   }
-  .txt {
-    &--xl {
-      font-weight: 700;
-      font-size: 3.6rem;
-      line-height: 3.6rem;
-    }
-    &--xs {
-      font-weight: 700;
-      font-size: 1.2rem;
-      line-height: 120%;
-    }
-    &--m {
-      font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 2rem;
-    }
-    &--brown {
-      color: var(--color-brown);
-    }
-  }
 
   &__content {
     padding: 3.2rem 3.2rem 3.2rem 2.4rem;
@@ -65,6 +45,31 @@
     }
     &-description {
       padding-top: 1.6rem;
+    }
+
+    &-times {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      right: 0;
+      top: 3.2rem;
+      width: 18.4rem;
+      height: 3rem;
+      color: var(--color-black);
+      background: url("@/assets/images/bgPse.png") no-repeat right center / 100%;
+      &::before {
+        background: url("@/assets/images/iconFilm.svg") no-repeat center center / 100%;
+        position: absolute;
+        content: '';
+        width: 1.6rem;
+        height: 1.8rem;
+        right: 2.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      p {
+        padding-left: 1.8rem;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="checkbox">
-    <label class="custom-checkbox">
+  <div class="films-checkbox">
+    <label class="films-checkbox-custom">
       <input
         :disabled="isDisabled"
         type="checkbox"
