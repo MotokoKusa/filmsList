@@ -1,24 +1,61 @@
-# vue_films_list
+# vue-films_list
 
-## Project setup
-```
+## Как установить проект
+
+Используется node версии 18.7.0 (если не установлена node то устанавливаем)
+
+Через github:
+
+1) Клонируем проект
+2) Переходим в папку с проектом
+3) Устанавливаем зависимости
+4) Запускаем проект
+
+``` shell
+git clone https://github.com/MotokoKusa/vue-films_list.git
+cd vue-films_list
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+С помощью архива:
+
+1) Распаковываем архив
+2) Открываем папку с проектом
+3) Устанавливаем зависимости
+4) Запускаем проект
+
+``` shell
+cd vue-films_list
+npm install
+npm run serve
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Какие зависимости там есть
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+В проекте используется:
+
+- [Prettier](https://prettier.io/) — инструмент для автоформатирования кода
+
+- [ESLint](https://eslint.org) — это утилита, которая может анализировать написанный код. Фактически, это статический
+  анализатор кода, и он может находить синтаксические ошибки, баги или неточности форматирования
+  
+- [Vue Router](https://router.vuejs.org/) — инструмент для настройки маршрутизации
+
+- [Vuex](https://vuex.vuejs.org/) — хранилище данных
+
+- [Axios](https://ru.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html) — библиотека для выполнения либо HTTP-запросов в Node.js, либо XMLHttpRequests в браузере
+
+## Файловая структура проекта
+
+Папка `assets/` - содержит глобальные стили а так же изображения.
+
+Папка `components/` - содержит компоненты Vue.js для приложения.
+
+Папка `store/` - содержит файлы Vuex хранилища.
+
+Папка `pages/` - содержит файлы страниц.
+
+Папка `router/` - содержит файлы Vue Router.
+
+Файл `config.js` - служит для хранение неизменных констант.
